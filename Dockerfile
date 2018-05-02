@@ -20,7 +20,7 @@ RUN \
   ./$AWSCLI_BUNDLE_FILENAME/install -i /usr/local/aws -b /usr/local/bin/aws
 
 
-FROM circleci/node:latest
+FROM circleci/node:carbon
 
 COPY --from=aws ["/usr/local/aws", "/usr/local/aws/"]
 COPY --from=aws ["/usr/local/bin/aws", "/usr/local/bin/"]
